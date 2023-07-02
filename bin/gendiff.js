@@ -1,19 +1,23 @@
 import { program } from 'commander'
-const gendiff = (filepath1, filepath2) =>{
-};
+
 
 program
   .name('gendiff')
   .description('Compares two configuration files and shows a difference.')
-  .version('1.0.0');
+  .version('1.0.0')
+  .argument('<filepath1>', 'first file path')
+  .argument('<filepath2>', 'second file path')
+
 
   program.command('gendiff')
-  .description('Compares two configuration files and shows a difference.')
   .option('-V, --version', 'output the version number')
-  .option('-h, --help', 'output the version number')
+  .option('-h, --help', 'output usage information')
+  .option('-f, --format <type> ', 'output format')
+  
    
-program.parse(process.argv);
+program.parse();
 
 const options = program.opts();
 if (options.version) console.log('output the version number');
-if (options.help) console.log('output the version number');
+if (options.help) console.log('output usage information');
+if (options.format) console.log('output format');
