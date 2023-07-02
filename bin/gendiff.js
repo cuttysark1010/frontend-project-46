@@ -1,5 +1,5 @@
 import { program } from 'commander'
-const gendiff = () =>{
+const gendiff = (filepath1, filepath2) =>{
 };
 
 program
